@@ -1,0 +1,51 @@
+- A nota máxima é 10,00 
+ 
+- As respostas da prova devem ser enviadas por e-mail (para bidu @ ci.ufpb.br)
+ em um ÚNICO arquivo ZIP contendo os códigos solicitados em arquivos separados
+ dentro do ZIP. 
+ 
+- O TÍTULO do e-mail E do ARQUIVO ZIP DEVERÁ conter "[PROVA02-LPII-222]", 
+ seu nome e matrícula. *TITULO DO E-MAIL E ARQUIVO ZIP*.
+ 
+- TODO CÓDIGO *DEVE* ser comentado com a explicação da lógica e demais 
+ informações solicitadas na questão. 
+ 
+- Cada questão deve ser respondida em um arquivo separado.
+ 
+- Plágio será punido com a perda da pontuação das respostas por todos os
+ participantes.
+ 
+- O envio deverá ser feito até as 11h55 do dia 23/05/2023
+ 
+**************** ATENÇÃO!!!!!! LEIA TODAS AS INSTRUÇÕES!!!!!! ****************
+ 
+(Questão 1 - 5,0)
+Escreva um programa em C que simule um sistema de detecção de vazamento em uma represa. O programa deve usar threads POSIX e espera ocupada para detectar mudanças em uma variável que representa o nível de água da represa (valor inicial: 1000 litros). O nível de água é modificado por um conjunto de 5 threads. Cada thread receberá um valor aleatório do quanto incrementará no nível do reservatório (entre 10 e 100 litros) e dormirá um tempo aleatório (entre 0 e 300ms) entre cada incremento. Quando o nível de água atingir 5000 litros, essas threads devem ser bloqueadas até que a thread principal garanta que o nível do reservatório foi reestabelecido para 1000 litros (e depois dormir 200ms). Deve ser utilizada espera ocupada em todos os casos e funções atômicas para modificação do nível do reservatório.
+ 
+-----------------------
+ 
+(Questão 2 - 5,0)
+Escreva um programa em C/C++ que simule o funcionamento de um sistema de pedágio em uma rodovia. O programa deve usar threads para representar os veículos que passam pelo pedágio e deve explorar a solução do problema da seção crítica (solucionando com trava ou semáforo) e sincronismo condicional (usando barreira).
+ 
+Cada veículo deve escolher aleatoriamente uma das cabines de pedágio para passar e deve esperar sua vez para pagar o pedágio. Quando um veículo paga o pedágio, ele deve incrementar o valor total arrecadado pelo pedágio. O programa deve garantir que apenas um veículo por vez possa pagar o pedágio em cada cabine (usando trava ou semáforo para solucionar o problema da seção crítica).
+ 
+Além disso, o programa deve usar uma barreira para sincronizar os veículos de forma que eles só possam sair do pedágio depois que todos os veículos tenham pago o pedágio. Depois que todos os veículos saírem do pedágio, o programa deve imprimir o valor total arrecadado pelo pedágio.
+ 
+O programa deve terminar quando todos os veículos tiverem passado pelo pedágio.
+ 
+-------------------------
+ 
+(Questão 3 - 4,0)
+Faça um programa em C/C++ que implemente uma solução para o problema do buffer compartilhado. Com um buffer compartilhado de 64 chars, o Programa deverá implementar duas funções:
+ 
+	- produtor() - gera um caractere alfanumérico aleatório e o deposita
+	no buffer; exibe o valor e a posição no buffer na tela; dorme 300ms;
+	repete;
+ 
+	- consumidor() - captura um dos valores disponíveis no buffer 
+	compartilhado e armazena em um arquivo; dorme um tempo aleatório 
+	entre 50ms e 200ms; repete;
+ 
+A função produtor deverá ser realizada por uma thread; já a função consumidor deverá ser realizada por três (5) threads. Cada consumidor armazena as informações em um buffer diferente (de tamanho 64) e todas as threads devem armazenar todos os valores gerados pelo produtor. 
+ 
+Use semáforos (biblioteca semaphore.h) para sincronizar o acesso ao buffer  compartilhado, de forma que todos os números gerados pelo produtor sejam consumidos uma vez, evitando qualquer problema ao ler ou escrever no buffer. Quando o buffer do consumidor estiver completo, o programa deverá exibir o seu contaúdo. Quando o buffer for consumido 2 vezes (ou seja, quando o produtor tiverem gerado 128 caracteres e estes forem consumidos por TODOS os consumidores) finalize o programa.
