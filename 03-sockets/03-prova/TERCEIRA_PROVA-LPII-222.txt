@@ -1,0 +1,43 @@
+Terceira Prova – Linguagem de Programação II – UFPB – 2022.2
+Professor: Carlos Eduardo Batista
+ 
+*********** ATENÇÃO!!!!!! LEIA TODAS AS INSTRUÇÕES!!!!!! ***********
+ 
+- As respostas da prova devem ser enviadas por e-mail (para bidu @ ci.ufpb.br)
+ em um ÚNICO arquivo ZIP contendo os códigos solicitados.
+ 
+- O título do e-mail e do arquivo ZIP deverá conter "[PROVA03-LPII-222]", 
+ seu nome e matrícula.
+ 
+- TODO CÓDIGO *DEVE* ser comentado com a explicação da lógica e demais 
+ informações solicitadas na questão.
+ 
+- Plágio será punido com a perda da pontuação das respostas por todos os
+ participantes.
+ 
+- O envio deverá ser feito até as 23h59 do dia 14/06/2023
+ 
+*********** ATENÇÃO!!!!!! LEIA TODAS AS INSTRUÇÕES!!!!!! ***********
+
+(Questão 1 - 10,0)
+
+Escolha a especificação de acordo com o último dígito de sua matrícula:
+
+0-1. Implemente um servidor TCP em C que atenda a múltiplos clientes. O servidor deve receber strings dos clientes e inverter a ordem dos caracteres nessas strings. A requisição e o resultado da inversão devem ser registrados em um arquivo de log (usando monitores) e enviados de volta para os clientes. O cliente deve enviar primeiro uma mensagem para o servidor com a string. Se o cliente enviar a string "EXIT", sua conexão deve ser fechada. Se três ou mais clientes enviarem a string "SHUTDOWN" para o servidor, o servidor deve ser finalizado.
+
+2-3. Implemente um servidor TCP em C que atenda a múltiplos clientes. O servidor deve receber strings dos clientes e remover todas as vogais dessas strings. A requisição e o resultado da remoção das vogais devem ser registrados em um arquivo de log (usando monitores) e enviados de volta para os clientes. O cliente deve enviar primeiro uma mensagem para o servidor com a string. Se o cliente enviar a string "EXIT", sua conexão deve ser fechada. Se três ou mais clientes enviarem a string "SHUTDOWN" para o servidor, o servidor deve ser finalizado.
+
+4-5. Implemente um servidor TCP em C que atenda a múltiplos clientes. O servidor deve receber strings dos clientes e substituir todas as letras minúsculas por letras maiúsculas nessas strings. A requisição e o resultado da substituição devem ser registrados em um arquivo de log (usando monitores) e enviados de volta para os clientes. O cliente deve enviar primeiro uma mensagem para o servidor com a string. Se o cliente enviar a string "EXIT", sua conexão deve ser fechada. Se três ou mais clientes enviarem a string "SHUTDOWN" para o servidor, o servidor deve ser finalizado.
+
+6-7. Implemente um servidor TCP em C que atenda a múltiplos clientes. O servidor deve receber strings dos clientes e gerar anagramas dessas strings (palavras formadas pelas mesmas letras, mas em ordem diferente). A requisição e o resultado da geração dos anagramas devem ser registrados em um arquivo de log (usando monitores) e enviados de volta para os clientes. O cliente deve enviar primeiro uma mensagem para o servidor com a string. Se o cliente enviar a string "EXIT", sua conexão deve ser fechada. Se três ou mais clientes enviarem a string "SHUTDOWN" para o servidor, o servidor deve ser finalizado.
+
+8-9. Implemente um servidor TCP em C que atenda a múltiplos clientes. O servidor deve receber strings dos clientes e calcular a frequência de cada caractere nessas strings. A requisição e o resultado do cálculo da frequência devem ser registrados em um arquivo de log (usando monitores) e enviados de volta para os clientes. O cliente deve enviar primeiro uma mensagem para o servidor com a string. Se o cliente enviar a string “EXIT”, sua conexão deve ser fechada. Se três ou mais clientes enviarem a string “SHUTDOWN” para o servidor, o servidor deve ser finalizado.
+
+* O servidor deve atender pelo menos 5 conexões simultâneas.
+* O cliente pode enviar mais de uma requisição (em sequência), até que envie o comando de saída ("EXIT").
+* Cada conexão deve ser tratada por uma thread distinta.
+* O monitor deve garantir o acesso thread-safe ao arquivo e também deve ser usado para o controle do encerramento do servidor.
+
+(Questão 2 - 4,0) 
+
+Implemente o cliente que seja útil para utilizar o serviço provido pelo servidor da questão anterior.
